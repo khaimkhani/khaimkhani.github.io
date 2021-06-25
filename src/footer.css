@@ -1,0 +1,23 @@
+
+
+footer {
+    font-size: 12px;
+    border-top: 1px solid rgb(129, 129, 129);
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to left, #82ffe07e, #a28dc983);
+    
+    border-top: 3px groove #a19bf16b;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    text-align: center;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
