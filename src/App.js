@@ -9,6 +9,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import me from './rippedbac.jpg';
 import { Link } from 'react-scroll';
+import { RellaxWrapper } from 'react-rellax-wrapper'
 
 
 const App = () => {
@@ -26,9 +27,9 @@ const App = () => {
     return (
       <div>
         <Navbar />
-        <Body name='first' img={me} imgId='firstImg' bg='bg1' off={offsetY} factor={0.2} />
-        <Body name='second' bg='bg2' />
-        <Body name='third' bg='bg3' />
+        <Body name='first' img={me} imgId='firstImg' bg='bg1' speed='-3'/>
+        <Body name='second' bg='bg2' speed='-5'/>
+        <Body name='third' bg='bg3' speed='-6'/>
         <Footer />
       </div>
     );
@@ -78,7 +79,7 @@ const Body = (props) => {
       <div className='mainBody'>
         <Card name={props.name} />
         <img data-aos='fade-right' data-aos-delay='50' data-aos-easing='ease-out' src={props.img} className={props.imgId}></img>
-        {props.bg && <Bg name={props.bg}/>}
+        {props.bg && <Bg name={props.bg} speed={props.speed}/>}
       </div>
     );
   }
@@ -165,11 +166,12 @@ const Third = () => {
 
 const Bg = (props) => {
 
-  let offs = props.off * props.factor;
 
   return (
+    
     <div className={props.name}>
     </div>
+
   );
   
 }
