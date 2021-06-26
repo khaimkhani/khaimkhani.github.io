@@ -207,8 +207,8 @@
 
 
 .firstImg {
-    max-height: 600px;
-    max-width: 450px;
+    max-height: 50%;
+    max-width: 26%;
     position: absolute;
     left: 0%;
     top: 37%;
