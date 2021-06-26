@@ -6,11 +6,13 @@
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
+    "animejs": "^3.2.1",
     "aos": "^3.0.0-beta.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.2",
+    "rellax": "^1.12.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

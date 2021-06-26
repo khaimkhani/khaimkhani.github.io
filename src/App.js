@@ -27,8 +27,8 @@ const App = () => {
       <div>
         <Navbar />
         <Body name='first' img={me} imgId='firstImg' bg='bg1' off={offsetY} factor={0.2} />
-        <Body name='second' bg='bg2' off={offsetY} factor={0.5} />
-        <Body name='third' bg='bg3' off={offsetY} factor={0.4} />
+        <Body name='second' bg='bg2' />
+        <Body name='third' bg='bg3' />
         <Footer />
       </div>
     );
@@ -78,7 +78,7 @@ const Body = (props) => {
       <div className='mainBody'>
         <Card name={props.name} />
         <img data-aos='fade-right' data-aos-delay='50' data-aos-easing='ease-out' src={props.img} className={props.imgId}></img>
-        {props.bg && <Bg name={props.bg} off={props.off} factor={props.factor} />}
+        {props.bg && <Bg name={props.bg}/>}
       </div>
     );
   }
@@ -168,9 +168,7 @@ const Bg = (props) => {
   let offs = props.off * props.factor;
 
   return (
-    <div className={props.name} style={{
-      transform: `translateY(${offs}px) translateX(${offs * -0.15}px) skew(-15deg)`
-    }}>
+    <div className={props.name}>
     </div>
   );
   
