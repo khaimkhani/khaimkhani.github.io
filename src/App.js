@@ -36,6 +36,13 @@ const App = () => {
 
 }
 
+const newWin = (url) => {
+  const nW = window.open(url, '_blank', 'noopener, noreferrer');
+  if (nW) {
+    nW.opener = null;
+  }
+}
+
 const Navbar = () => { 
   
   return (
@@ -46,8 +53,8 @@ const Navbar = () => {
         TAIMOR KHAN <i className='fas fa-rocket fa-sm'></i>
         </Link>
       </h1>
-      <i className='navlog fab fa-linkedin fa-lg'></i>
-      <i className='navlog fab fa-github fa-lg'></i>
+      <i className='navlog fab fa-linkedin fa-lg' onClick={() => newWin('https://www.linkedin.com/in/muhammad-taimor-khan-8b938b1b8/')}></i>
+      <i className='navlog fab fa-github fa-lg' onClick={() => newWin('https://github.com/khaimkhani')}></i>
       
       <ul className='items'>
         <li>
@@ -138,22 +145,31 @@ const Second = () => {
   );
 }
 
+const copyClip = (text) => {
+  navigator.clipboard.writeText(text);
+  alert('Copied to Clipboard!');
+}
+
 const Third = () => {
+
+  const [num, setNum] = useState('+16479136994');
+  const [email, setEmail] = useState('taimor.khan@mail.utoronto.ca');
+
   return (
     <div id='contact'>
       <h1 data-aos='fade-right' data-aos-easing='ease-out' className='tc-heading'>CONTACT ME</h1>
       <div className='contact-info'>
         <span data-aos='zoom-out-left' data-aos-delay='100'>
-          <i className='c-infoIcon fas fa-envelope fa-lg'></i> taimor.khan@mail.utoronto.ca
+          <i className='c-infoIcon fas fa-envelope fa-lg' onClick={() => copyClip(email)}></i> taimor.khan@mail.utoronto.ca
         </span>
         <span data-aos='zoom-out-left' data-aos-delay='150'>
-          <i className='c-infoIcon fab fa-linkedin fa-lg'></i>
+          <i className='c-infoIcon fab fa-linkedin fa-lg' onClick={() => newWin('https://www.linkedin.com/in/muhammad-taimor-khan-8b938b1b8/')}></i>
         </span>
         <span data-aos='zoom-out-left' data-aos-delay='200'>
-          <i className='c-infoIcon fas fa-phone-alt fa-lg'></i> +1 (647) 913 6994
+          <i className='c-infoIcon fas fa-phone-alt fa-lg' onClick={() => copyClip(num)}></i> +1 (647) 913 6994
         </span>
         <span data-aos='zoom-out-left' data-aos-delay='250'>
-          <i className='c-infoIcon fab fa-github fa-lg'></i>
+          <i className='c-infoIcon fab fa-github fa-lg' onClick={() => newWin('https://github.com/khaimkhani')}></i>
         </span>
         <div className='inputForms'>
           <h3 className='tc-heading2' data-aos='fade-right' data-aos-delay='300'>
