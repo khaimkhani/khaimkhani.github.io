@@ -9,7 +9,9 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import me from './rippedbac.jpg';
 import { Link } from 'react-scroll';
-import { RellaxWrapper } from 'react-rellax-wrapper'
+import { RellaxWrapper } from 'react-rellax-wrapper';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () => {
@@ -147,7 +149,7 @@ const Second = () => {
 
 const copyClip = (text) => {
   navigator.clipboard.writeText(text);
-  alert('Copied to Clipboard!');
+  toast.dark('Copied to Clipboard!');
 }
 
 const Third = () => {
@@ -157,6 +159,7 @@ const Third = () => {
 
   return (
     <div id='contact'>
+      <ToastContainer position='top-right' autoClose={1000} pauseOnHover/>
       <h1 data-aos='fade-right' data-aos-easing='ease-out' className='tc-heading'>CONTACT ME</h1>
       <div className='contact-info'>
         <span data-aos='zoom-out-left' data-aos-delay='100'>
@@ -171,11 +174,11 @@ const Third = () => {
         <span data-aos='zoom-out-left' data-aos-delay='250'>
           <i className='c-infoIcon fab fa-github fa-lg' onClick={() => newWin('https://github.com/khaimkhani')}></i>
         </span>
+        
         <div className='inputForms'>
           <h3 className='tc-heading2' data-aos='fade-right' data-aos-delay='300'>
             SEND ME A MESSAGE
           </h3>
-        
           <input className='name' placeholder='name...' data-aos='fade-right' data-aos-delay='300'></input>
           <input className='email' type='email' placeholder='email...' data-aos='fade-right' data-aos-delay='300'></input>
           <textarea className='message' placeholder='message...' cols='40' rows='7' data-aos='fade-right' data-aos-delay='300'></textarea>
