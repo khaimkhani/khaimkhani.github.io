@@ -51,10 +51,10 @@ const Navbar = () => {
       
       <ul className='items'>
         <li>
-          <button className='about'><Link to='about' smooth={true} offset={-120}>About me</Link></button>
+          <button className='about navBut'><Link to='about' smooth={true} offset={-120}>About me</Link></button>
         </li>          
         <li>
-          <button className='hire'><Link to='contact' smooth={true}>Contact me</Link></button>
+          <button className='hire navBut'><Link to='contact' smooth={true}>Contact me</Link></button>
         </li>
       </ul>
       
@@ -155,10 +155,16 @@ const Third = () => {
         <span data-aos='zoom-out-left' data-aos-delay='250'>
           <i className='c-infoIcon fab fa-github fa-lg'></i>
         </span>
-        <h3 className='tc-heading2' data-aos='fade-right' data-aos-delay='300'>
-          SEND ME A MESSAGE
-        </h3>
-      
+        <div className='inputForms'>
+          <h3 className='tc-heading2' data-aos='fade-right' data-aos-delay='300'>
+            SEND ME A MESSAGE
+          </h3>
+        
+          <input className='name' placeholder='name...' data-aos='fade-right' data-aos-delay='300'></input>
+          <input className='email' type='email' placeholder='email...' data-aos='fade-right' data-aos-delay='300'></input>
+          <textarea className='message' placeholder='message...' cols='40' rows='7' data-aos='fade-right' data-aos-delay='300'></textarea>
+          <button className='sendButton' data-aos='fade-right' data-aos-delay='300'>Send</button>
+        </div>
       </div>
     </div>
   );

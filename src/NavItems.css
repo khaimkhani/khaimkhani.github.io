@@ -16,7 +16,7 @@
 .logo {
     transition: color 500ms, border-color 500ms;
     font-family: Arial, Helvetica, sans-serif, sans-serif;
-    font-size: 35px;
+    font-size: 5vmin;
     margin-left: 20px;
     margin-right: auto;
     align-self: center;
@@ -76,7 +76,7 @@
     transform: translateY(1px) translateX(2px);
 }
 
-button {
+.navBut {
     
     cursor: pointer;
     border-style: solid;
@@ -84,7 +84,7 @@ button {
     border-radius: 5%;
     transition: border-left 400ms, border-top 400ms, transform 400ms, box-shadow 400ms, margin-left 400ms;
 }
-button:hover {
+.navBut:hover {
     transition: border-top 250ms, border-left 250ms, transform 250ms, box-shadow 250ms, margin-left 250ms;
     border-bottom-left-radius: 13%;
     margin-left: -4px;
