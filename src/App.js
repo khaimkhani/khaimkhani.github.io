@@ -157,6 +157,10 @@ const Third = () => {
   const [num, setNum] = useState('+16479136994');
   const [email, setEmail] = useState('taimor.khan@mail.utoronto.ca');
 
+  const sendEmail = (e) => {
+
+  }
+
   return (
     <div id='contact'>
       <ToastContainer position='top-right' autoClose={1000} pauseOnHover/>
@@ -179,10 +183,12 @@ const Third = () => {
           <h3 className='tc-heading2' data-aos='fade-right' data-aos-delay='300'>
             SEND ME A MESSAGE
           </h3>
-          <input className='name' placeholder='name...' data-aos='fade-right' data-aos-delay='300'></input>
-          <input className='email' type='email' placeholder='email...' data-aos='fade-right' data-aos-delay='300'></input>
-          <textarea className='message' placeholder='message...' cols='40' rows='7' data-aos='fade-right' data-aos-delay='300'></textarea>
-          <button className='sendButton' data-aos='fade-right' data-aos-delay='300'>Send</button>
+          <form onClick={sendEmail}>
+            <input className='name' placeholder='name...' data-aos='fade-right' data-aos-delay='300'></input>
+            <input className='email' type='email' placeholder='email...' data-aos='fade-right' data-aos-delay='300'></input>
+            <textarea className='message' placeholder='message...' cols='40' rows='7' data-aos='fade-right' data-aos-delay='300'></textarea>
+            <button className='sendButton' data-aos='fade-right' data-aos-delay='300'>Send</button>
+          </form>
         </div>
       </div>
     </div>
