@@ -154,6 +154,7 @@ const Second = () => {
 const copyClip = (text) => {
   navigator.clipboard.writeText(text);
   toast.dark('Copied to Clipboard!');
+  
 }
 
 const Third = () => {
@@ -184,6 +185,11 @@ const Third = () => {
       message: message
     };
 
+    if (!userData.message) {
+      toast.error('Message cannot be empty', {autoClose: 2000, position: 'bottom-center'});
+      return;
+    }
+
     setButState(true);
     emailjs.send("service_thtycta", 'template_74zrh5x', userData).then(
       function(response) {
@@ -191,7 +197,7 @@ const Third = () => {
         toast.success('Message received!');
       }, function(error) {
         console.log('FAILED...', error);
-        toast.error('Message failed to send');
+        toast.error('Message failed to send', {autoClose: 3000});
       });
     setTimeout(() => setButState(false), 3000);
   }
