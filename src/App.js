@@ -9,9 +9,13 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import me from './rippedbac.jpg';
 import { Link } from 'react-scroll';
-import { RellaxWrapper } from 'react-rellax-wrapper';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import emailjs, { init } from 'emailjs-com';
+
+init("user_PJnl9b4Ws3Dy3QhaAuOJ6");
+
+require('dotenv').config();
 
 
 const App = () => {
@@ -154,11 +158,42 @@ const copyClip = (text) => {
 
 const Third = () => {
 
+  const [butState, setButState] = useState(false);
   const [num, setNum] = useState('+16479136994');
   const [email, setEmail] = useState('taimor.khan@mail.utoronto.ca');
+  const [name, setName] = useState('');
+  const [user_email, setUserEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-  const sendEmail = (e) => {
+  const nameChange = (e) => {
+    setName(e.target.value);
+  }
 
+  const emailChange = (e) => {
+    setUserEmail(e.target.value);
+  }
+
+  const messageChange = (e) => {
+    setMessage(e.target.value);
+  }
+
+  const sendEmail = () => {
+    let userData = {
+      name: name,
+      email: user_email,
+      message: message
+    };
+
+    setButState(true);
+    emailjs.send("service_thtycta", 'template_74zrh5x', userData).then(
+      function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        toast.success('Message received!');
+      }, function(error) {
+        console.log('FAILED...', error);
+        toast.error('Message failed to send');
+      });
+    setTimeout(() => setButState(false), 3000);
   }
 
   return (
@@ -183,12 +218,10 @@ const Third = () => {
           <h3 className='tc-heading2' data-aos='fade-right' data-aos-delay='300'>
             SEND ME A MESSAGE
           </h3>
-          <form onClick={sendEmail}>
-            <input className='name' placeholder='name...' data-aos='fade-right' data-aos-delay='300'></input>
-            <input className='email' type='email' placeholder='email...' data-aos='fade-right' data-aos-delay='300'></input>
-            <textarea className='message' placeholder='message...' cols='40' rows='7' data-aos='fade-right' data-aos-delay='300'></textarea>
-            <button className='sendButton' data-aos='fade-right' data-aos-delay='300'>Send</button>
-          </form>
+          <input className='name' onChange={nameChange} name='name' placeholder='name...' data-aos='fade-right' data-aos-delay='300'></input>
+          <input className='email' onChange={emailChange} name='email' type='email' placeholder='email...' data-aos='fade-right' data-aos-delay='300'></input>
+          <textarea className='message' onChange={messageChange} name='message' placeholder='message...' cols='37' rows='6' data-aos='fade-right' data-aos-delay='300'></textarea>
+          <button className='sendButton' disabled={butState} onClick={sendEmail} data-aos='fade-right' data-aos-delay='300'>Send {process.env.S_ID}</button>
         </div>
       </div>
     </div>
