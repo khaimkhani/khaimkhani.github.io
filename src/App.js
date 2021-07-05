@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import './index.css';
 import './NavItems.css';
@@ -20,22 +20,18 @@ require('dotenv').config();
 
 const App = () => {
   
-  const [offsetY, setOffsetY] = useState(0);
-  const handleScroll = () => setOffsetY(window.pageYOffset);
+  
 
   useEffect(() => {
     Aos.init({duration: 900});
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
     return (
       <div>
         <Navbar />
-        <Body name='first' img={me} imgId='firstImg' bg='bg1' speed='-3'/>
-        <Body name='second' bg='bg2' speed='-5'/>
-        <Body name='third' bg='bg3' speed='-6'/>
+        <Body name='first' img={me} imgId='firstImg' bg='bg1' speed='-3' factor={0.7}/>
+        <Body name='second' bg='bg2' speed='-5' factor={0.8}/>
+        <Body name='third' bg='bg3' speed='-6' factor={0.8}/>
         <Footer />
       </div>
     );
@@ -92,7 +88,7 @@ const Body = (props) => {
       <div className='mainBody'>
         <Card name={props.name} />
         <img data-aos='fade-right' data-aos-delay='50' data-aos-easing='ease-out' src={props.img} className={props.imgId}></img>
-        {props.bg && <Bg name={props.bg} speed={props.speed}/>}
+        {props.bg && <Bg name={props.bg} speed={props.speed} factor={props.factor}/>}
       </div>
     );
   }
@@ -236,10 +232,26 @@ const Third = () => {
 
 const Bg = (props) => {
 
+  const offsetY = useRef(0);
+  const handleScroll = () => {
+    offsetY.current = window.pageYOffset * props.factor;
+
+    console.log(offsetY);
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+
+  }, []);
+
+  const style = {
+    transform: `translateY(${offsetY.current}px) skew(-15deg)`
+  };
 
   return (
     
-    <div className={props.name}>
+    <div className={props.name} ref={offsetY} style={style}>
     </div>
 
   );

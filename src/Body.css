@@ -73,9 +73,9 @@
     border: 1px solid #616161af;
 }
 
-.bg1, .bg2, .bg3 {
+/* .bg1, .bg2, .bg3 {
     transform: skew(-15deg);
-}
+} */
 .second {
     position: absolute;
     right: 21vw;
