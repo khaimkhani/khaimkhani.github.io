@@ -29,9 +29,9 @@ const App = () => {
     return (
       <div>
         <Navbar />
-        <Body name='first' img={me} imgId='firstImg' bg='bg1' speed='-3' factor={0.7}/>
-        <Body name='second' bg='bg2' speed='-5' factor={0.8}/>
-        <Body name='third' bg='bg3' speed='-6' factor={0.8}/>
+        <Body name='first' img={me} imgId='firstImg' bg='bg1' factor={0.6}/>
+        <Body name='second' bg='bg2' factor={0.9}/>
+        <Body name='third' bg='bg3' factor={0.8} />
         <Footer />
       </div>
     );
@@ -232,10 +232,11 @@ const Third = () => {
 
 const Bg = (props) => {
 
-  const offsetY = useRef(0);
-  const handleScroll = () => {
-    offsetY.current = window.pageYOffset * props.factor;
 
+  const [offsetY, setOffset] = useState(0);
+  const handleScroll = () => {
+    
+    setOffset(window.pageYOffset * props.factor);
     console.log(offsetY);
   }
 
@@ -246,12 +247,12 @@ const Bg = (props) => {
   }, []);
 
   const style = {
-    transform: `translateY(${offsetY.current}px) skew(-15deg)`
+    transform: `translateY(${offsetY}px) skew(-15deg)`
   };
 
   return (
     
-    <div className={props.name} ref={offsetY} style={style}>
+    <div className={props.name} style={style}>
     </div>
 
   );
