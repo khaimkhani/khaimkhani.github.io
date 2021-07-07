@@ -1,6 +1,7 @@
 
 
 .NavItems {
+    max-width: 100%;
     position: fixed;
     display: flex;
     background-image: linear-gradient(to left, #82ffe09d, #a28dc99d);

@@ -5,6 +5,7 @@
     background: #ffe2d8;  
     /* background-image: url('sitebg.jpg');
     background-size: 150% 150%; */
+    width: 100%;
     z-index: 0;
     justify-content: center;
     align-items: center;
@@ -28,13 +29,13 @@
 
 .bg1 {
     position: absolute;
-    top: 8.5vh;
+    top: 15vh;
     right: 43vw;
     background-color: #ecb09c;
     background-image: url('water3.jpg');
     background-size: 200% 200%;
-    height: 32%;
-    width: 65%;
+    height: 60vh;
+    width: 48vw;
     margin: 1vh;
     margin-right: 0;
     border-radius: 10%;
@@ -46,12 +47,12 @@
 .bg2 {
     position: absolute;
     top: 140vh;
-    right: 5vw;
+    right: 7vw;
     /* background-color: #f1cabdee; */
     background-image: url('sand2.jpg');
     background-position: right;
-    height: 40%;
-    width: 70%;
+    height: 115vh;
+    width: 70vw;
     margin: 1vh;
     border-radius: 20%;
     box-shadow: 7px 4px 4px #a5746483;
