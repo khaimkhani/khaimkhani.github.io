@@ -29,9 +29,9 @@ const App = () => {
     return (
       <div>
         <Navbar />
-        <Body name='first' img={me} imgId='firstImg' bg='bg1' factor={0.6}/>
-        <Body name='second' bg='bg2' factor={0.9}/>
-        <Body name='third' bg='bg3' factor={0.8} />
+        <Body name='first' img={me} imgId='firstImg' bg='bg1' />
+        <Body name='second' bg='bg2' />
+        <Body name='third' />
         <Footer />
       </div>
     );
@@ -232,27 +232,9 @@ const Third = () => {
 
 const Bg = (props) => {
 
-
-  const [offsetY, setOffset] = useState(0);
-  const handleScroll = () => {
-    
-    setOffset(window.pageYOffset * props.factor);
-    console.log(offsetY);
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-
-  }, []);
-
-  const style = {
-    transform: `translateY(${offsetY}px) skew(-15deg)`
-  };
-
   return (
     
-    <div className={props.name} style={style}>
+    <div className={props.name}  data-aos='fade-right' data-aos-delay='350' data-aos-easing='ease-out'>
     </div>
 
   );

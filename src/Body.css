@@ -28,54 +28,41 @@
 
 .bg1 {
     position: absolute;
-    top: 50vh;
-    right: 36vw;
+    top: 8.5vh;
+    right: 43vw;
     background-color: #ecb09c;
-    
-    height: 20%;
-    width: 30%;
+    background-image: url('water3.jpg');
+    background-size: 200% 200%;
+    height: 32%;
+    width: 65%;
     margin: 1vh;
     margin-right: 0;
-    border-radius: 20%;
+    border-radius: 10%;
     box-shadow: 7px 5px 2px #a5746483;
-    z-index: 2;
-    border: 1px solid #616161af;
+    z-index: 1;
+    border: 3px solid #616161af;
 }
 
 .bg2 {
     position: absolute;
-    top: 28vh;
+    top: 140vh;
     right: 5vw;
     /* background-color: #f1cabdee; */
     background-image: url('sand2.jpg');
     background-position: right;
-    height: 30%;
-    width: 50%;
+    height: 40%;
+    width: 70%;
     margin: 1vh;
     border-radius: 20%;
-    box-shadow: 5px 3px 2px #a5746483;
+    box-shadow: 7px 4px 4px #a5746483;
     z-index: 1;
-    border: 1px solid #616161af;
+    border: 3px solid #616161af;
 }
 
-.bg3 {
-    position: absolute;
-    top: 30vh;
-    right: 42vw;
-    background-color: #d8957f;
-    
-    height: 20%;
-    width: 30%;
-    margin: 1vh;
-    border-radius: 20%;
-    box-shadow: 4px 2px 2px #a5746483;
-    z-index: 1;
-    border: 1px solid #616161af;
-}
 
-/* .bg1, .bg2, .bg3 {
-    transform: skew(-15deg);
-} */
+.bg1, .bg2 {
+    transform: skew(-15deg) !important;
+}
 .second {
     position: absolute;
     right: 21vw;
