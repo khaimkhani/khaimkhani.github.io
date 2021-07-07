@@ -234,7 +234,7 @@ const Bg = (props) => {
 
   return (
     
-    <div className={props.name}  data-aos='fade-right' data-aos-delay='350' data-aos-easing='ease-out'>
+    <div className={props.name}  data-aos='fade-right' data-aos-delay='50' data-aos-easing='ease-out'>
     </div>
 
   );

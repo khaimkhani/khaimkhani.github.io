@@ -47,13 +47,13 @@
 .bg2 {
     position: absolute;
     top: 140vh;
-    right: 7vw;
+    right: 8vw;
     /* background-color: #f1cabdee; */
     background-image: url('sand2.jpg');
     background-position: right;
-    height: 115vh;
-    width: 70vw;
-    margin: 1vh;
+    height: 110vh;
+    width: 65vw;
+    margin: 0;
     border-radius: 20%;
     box-shadow: 7px 4px 4px #a5746483;
     z-index: 1;
