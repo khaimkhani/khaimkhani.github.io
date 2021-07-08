@@ -13,10 +13,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs, { init } from 'emailjs-com';
 
-init("user_PJnl9b4Ws3Dy3QhaAuOJ6");
 
-require('dotenv').config();
-
+init(process.env.REACT_APP_USER_ID);
 
 const App = () => {
   
@@ -129,7 +127,7 @@ const First = () => {
 
 const Second = () => {
   // possibly do cool 'time alive' var
-  
+
   return (
     <div id='about'>
       <h1 data-aos='fade-left' data-aos-easing='ease-out' className='sc-heading'>ABOUT ME</h1>
@@ -177,14 +175,14 @@ const Third = () => {
       email: user_email,
       message: message
     };
-
+    console.log(process.env.REACT_APP_S_ID);
     if (!userData.message) {
       toast.error('Message cannot be empty', {autoClose: 2000, position: 'bottom-center'});
       return;
     }
 
     setButState(true);
-    emailjs.send("service_thtycta", 'template_74zrh5x', userData).then(
+    emailjs.send(process.env.REACT_APP_S_ID, process.env.REACT_APP_TMP_ID, userData).then(
       function(response) {
         console.log('SUCCESS!', response.status, response.text);
         toast.success('Message received!');
