@@ -129,8 +129,7 @@ const First = () => {
 
 const Second = () => {
   // possibly do cool 'time alive' var
-  const [play, setPlay] = useState(false);
-
+  
   return (
     <div id='about'>
       <h1 data-aos='fade-left' data-aos-easing='ease-out' className='sc-heading'>ABOUT ME</h1>
@@ -140,8 +139,6 @@ const Second = () => {
         <span data-aos='fade-up-left' data-aos-delay='200'>FRONT-END DEVELOPER WITH AN EYE FOR DESIGN</span>
         <span data-aos='fade-up-left' data-aos-delay='250'>KNACK FOR WRITING CLEAN, EFFICIENT CODE</span>
         <span data-aos='fade-up-left' data-aos-delay='300'>EXPERIENCE WITH ML AND COMPUTER VISION FRAMEWORKS</span>
-        <span data-aos='fade-up-left' data-aos-delay='350'>AND...</span>
-        <span data-aos='fade-up-left' data-aos-delay='400'>SOMETIMES I MAKE BEATS <i onClick={() => setPlay(!play)} className={play ? 'fas fa-pause fa-xs' : 'fas fa-play fa-xs'}></i></span>
       </div>
     </div>
   );
